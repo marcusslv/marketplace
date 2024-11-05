@@ -6,7 +6,6 @@ use App\Marketplace\Enums\TenantUserRoleEnum;
 use App\Marketplace\Tenant\Entities\TenantEntity;
 use App\Models\TenantUser;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TenantUserSeeder extends Seeder

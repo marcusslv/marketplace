@@ -2,8 +2,8 @@
 
 namespace App\Marketplace\Tenant\Services;
 
-use App\Marketplace\Tenant\Repositories\TenantRepository;
 use App\Marketplace\Abstracts\AbstractService;
+use App\Marketplace\Tenant\Repositories\TenantRepository;
 
 class TenantService extends AbstractService
 {

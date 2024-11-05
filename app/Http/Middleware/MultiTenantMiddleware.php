@@ -19,7 +19,7 @@ class MultiTenantMiddleware
         $service = app(\App\Marketplace\Tenant\Services\TenantService::class);
         $tenant = $service->getTenantByDomain($request->getHost());
 
-        if (!$tenant) {
+        if (! $tenant) {
             abort(404, 'Tenant not found');
         }
 

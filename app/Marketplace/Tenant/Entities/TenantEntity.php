@@ -19,16 +19,16 @@ class TenantEntity extends Tenant
         'updated_at',
     ];
 
-     protected $casts = [
-         'created_at' => 'datetime:Y-m-d H:i:s',
-         'is_active' => 'boolean',
-         'settings' => 'array',
-     ];
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'is_active' => 'boolean',
+        'settings' => 'array',
+    ];
 
-     protected $hidden = [
-         'deleted_at',
-         'updated_at',
-     ];
+    protected $hidden = [
+        'deleted_at',
+        'updated_at',
+    ];
 
     public function owner(): BelongsTo
     {

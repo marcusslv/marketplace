@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Marketplace\Tenant\Entities\TenantEntity;
 use App\Models\Tenant;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TenantSeeder extends Seeder

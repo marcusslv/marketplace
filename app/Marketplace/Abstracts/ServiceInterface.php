@@ -2,7 +2,4 @@
 
 namespace App\Marketplace\Abstracts;
 
-interface ServiceInterface
-{
-
-}
+interface ServiceInterface {}
