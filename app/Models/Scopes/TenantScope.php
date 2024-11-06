@@ -21,8 +21,8 @@ class TenantScope implements Scope
         session()->put('tenant_id', $tenantId);
     }
 
-    public static function getTenant(): int
+    public static function getTenant(): ?int
     {
-        return session()->get('tenant_id');
+        return session()->get('tenant_id', 1);
     }
 }

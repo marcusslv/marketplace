@@ -17,7 +17,7 @@ class TenantUserSeeder extends Seeder
     {
         TenantUser::factory()->make([
             'tenant_id' => TenantEntity::first()->id,
-            'user_id' => User::factory(),
+            'user_id' => User::first()->id ?? User::factory(),
             'role' => TenantUserRoleEnum::OWNER,
         ])->save();
     }

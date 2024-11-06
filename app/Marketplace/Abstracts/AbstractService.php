@@ -15,9 +15,9 @@ abstract class AbstractService implements ServiceInterface
     /**
      * @return mixed
      */
-    public function getAll(array $params = [])
+    public function getAll(array $params = [], array $with = [])
     {
-        return $this->repository->all($params, $this->with);
+        return $this->repository->all($params, $with);
     }
 
     /**

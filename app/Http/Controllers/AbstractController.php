@@ -8,8 +8,6 @@ use Illuminate\Validation\ValidationException;
 
 abstract class AbstractController extends Controller
 {
-    protected $with = [];
-
     protected $service;
 
     protected $requestValidate;
@@ -23,7 +21,7 @@ abstract class AbstractController extends Controller
     {
         $items = $this
             ->service
-            ->getAll($request->all(), $this->with)
+            ->getAll($request->get('params', []), $request->get('with', []))
             ->toArray();
 
         return $this->ok($items);
@@ -94,10 +92,10 @@ abstract class AbstractController extends Controller
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
         try {
-            return $this->ok($this->service->find($id, $this->with));
+            return $this->ok($this->service->find($id, $request->get('with', [])));
         } catch (\Exception|ValidationException $e) {
             DB::rollBack();
             if ($e instanceof \Exception) {

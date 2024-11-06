@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Marketplace\Enums\TenantUserRoleEnum;
-use App\Models\TenantUser;
+use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +20,7 @@ class TenantUserFactory extends Factory
     public function definition(): array
     {
         return [
-            'tenant_id' => TenantUser::factory(),
+            'tenant_id' => Tenant::first()?->id ?? Tenant::factory(),
             'user_id' => User::factory(),
             'role' => $this->faker->randomElement(TenantUserRoleEnum::cases()),
         ];

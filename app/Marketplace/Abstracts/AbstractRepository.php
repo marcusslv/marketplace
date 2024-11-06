@@ -63,7 +63,7 @@ abstract class AbstractRepository implements RepositoryInterface
             return $this->getModel()->with($with)->find($id);
         }
 
-        return $this->findOneWhere(['uuid' => $id]);
+        return $this->getModel()->with($with)->where('slug', $id)->first();
     }
 
     /**

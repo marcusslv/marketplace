@@ -12,6 +12,7 @@ class TenantEntity extends Tenant
 
     protected $fillable = [
         'name',
+        'slug',
         'domain',
         'is_active',
         'settings',
@@ -26,6 +27,7 @@ class TenantEntity extends Tenant
     ];
 
     protected $hidden = [
+        'id',
         'deleted_at',
         'updated_at',
     ];
